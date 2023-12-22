@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录页面</title>
+</head>
+<body>
+    <h1>登录</h1>
+    <form>
+        <label for="username">帐号:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">密码:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <button type="button" onclick="redirectToLogin()">前往登录页面</button>
+    </form>
+
+    <script>
+        function redirectToLogin() {
+            // 获取输入的帐号和密码
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            // 在这里添加验证逻辑，确保帐号和密码正确后再重定向到登录页面
+            if (username === "max" && password === "0106") {
+                // window.location.href = "https://google.com.tw";
+                // document.querySelector("#APjFqb").value = "test"
+                fetch('https://google.com.tw')
+                    .then(response => {
+                        if (response.ok) {
+                            // 如果响应成功，解析响应数据为JSON
+                            return response.json();
+                        } else {
+                            throw new Error('网络请求失败');
+                        }
+                    })
+                    .then(data => {
+                        // 在这里处理从服务器返回的数据
+                        console.log('收到响应数据:', data);
+                    })
+                    .catch(error => {
+                        // 处理任何错误
+                        console.error('发生错误:', error);
+                    });
+            } else {
+                alert("帐号或密码不正确。");
+            }
+        }
+    </script>
+</body>
+</html>
