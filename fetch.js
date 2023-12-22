@@ -1,3 +1,7 @@
+function testFun () {
+  console.log('已運行')
+}
+
 await fetch("https://ebook.nlpi.edu.tw/personal/csrftoken", {
   headers: {
     accept: "application/json, text/javascript, */*; q=0.01",
