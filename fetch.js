@@ -1,5 +1,8 @@
 function testFun () {
-  console.log('已運行')
+  const searchBox = document.querySelector("#main > div > div.ZQftYELq0aOsg6tPbVbV > div.jEMA2gVoLgPQqAFrPhFw > header > div.rovbQsmAS_mwvpKHaVhQ > div > div > form > input");
+  searchBox.value = "Dragon night";
+  console.log('已運行');
+  console.log(searchBox);
 }
 
 // await fetch("https://ebook.nlpi.edu.tw/personal/csrftoken", {
